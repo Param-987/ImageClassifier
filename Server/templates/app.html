@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ImageClassifier</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='app.css') }}">
+    <link rel="icon" href="{{ url_for('static',filename='Images/classification.png') }}" type="image/x-icon">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div>
+      <h2 id="header">Celebrity Image Classifier</h2>
+    </div>
+    <table class="table table-borderless">
+      <tbody>
+        <tr>
+          <td>
+            <img src="{{ url_for('static',filename='Images/ElonMusk.jpeg') }}" alt="" class="rounded-circle" />
+          </td>
+          <td>
+            <img src="{{ url_for('static',filename='Images/Dhoni.jpeg') }}" alt="" class="rounded-circle" />
+          </td>
+          <td>
+            <img src="{{ url_for('static',filename='Images/Ronaldo.jpeg') }}" alt="" class="rounded-circle" />
+          </td>
+          <td>
+            <img src="{{ url_for('static',filename='Images/Pichae.jpeg') }}" alt="" class="rounded-circle" />
+          </td>
+          <td>
+            <img src="{{ url_for('static',filename='Images/Virat.jpeg') }}" alt="" class="rounded-circle" />
+          </td>
+        </tr>
+        <tr>
+          <td>Elon Musk</td>
+          <td>MS Dhoni</td>
+          <td>Cristiano Ronaldo</td>
+          <td>Sundar Pichae</td>
+          <td>Virat Kohli</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form action="/" enctype="multipart/form-data">
+          <div class="drop-zone">
+            <span class="drop-zone__prompt"
+              >Drop file here or click to upload</span
+            >
+            <input type="file" id="image-file" name="myFile" class="drop-zone__input" />
+          </div>
+        </form>
+
+          <div class="row but" style="margin-top:2%;">
+            <div class="col">
+              <button id ="MyButton" style="font-size: 1.4em">Classify</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h2 class="head">Can't Process the Image . Image face and Eyes is not recognizable.</h2>
+          <table class="table flask">
+            <thead>
+              <tr>
+                <th scope="col">Player Name</th>
+                <th scope="col">Probability score</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th scope="row">Elon Musk</th>
+                <td style="padding-left:10%;">1</td> 
+              </tr>
+              <tr>
+                <th scope="row">Virat Kohli</th>
+                <td style="padding-left:10%;">2</td>
+              </tr>
+              <tr>
+                <th scope="row">Cristiano_Ronaldo</th>
+                <td style="padding-left:10%;">3</td>
+              </tr>
+              <tr>
+                <th scope="row">MS Dhoni</th>
+                <td style="padding-left:10%;">4</td>
+              </tr>
+              <tr>
+                <th scope="row">Sundar Pichae</th>
+                <td style="padding-left:10%;">5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="fileDisplayArea"></div>
+
+    <script src="{{ url_for('static',filename='app.js') }}"></script>
+  </body>
+</html>
