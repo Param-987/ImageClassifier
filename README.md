@@ -5,7 +5,7 @@ Before making prediction it look for the faces in the image uploaded , if the fa
 ### UI of the project
 ![UI](UI.png)
 
-you can **Drag Drop or Upload ** image on the upload section and click classify , the model will classify the celebrity in the image and will predict the celebrity with a probability that model says the image belongs to this celebrity with x prediction probability , celebrity having the maximum probability score wins 
+you can **Drag Drop or Upload** image on the upload section and click classify , the model will classify the celebrity in the image and will predict the celebrity with a probability that model says the image belongs to this celebrity with x prediction probability , celebrity having the maximum probability score wins 
 
 #### Sample
 ![ViratKohli](ViratKohli.png)
